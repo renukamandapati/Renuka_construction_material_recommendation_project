@@ -112,7 +112,7 @@ def recommend_materials():
     return render_template('recommend_materials.html', preference=user_pref, materials=materials, username=current_user.username)
 
 #ADD MATERIALS
-@routes.route('/add_material', methods=['GET', 'POST'])
+@routes.route('/add_materials', methods=['GET', 'POST'])
 @login_required
 def add_material():
     if current_user.role != 'admin':
@@ -135,7 +135,7 @@ def add_material():
         except Exception as e:
             flash(f"Error adding material: {e}", "danger")
 
-    return render_template('add_material.html')
+    return render_template('add_materials.html')
 
 
 # SET / UPDATE PREFERENCES
@@ -173,7 +173,7 @@ def set_preferences():
     return render_template('set_preferences.html')
 
 # EDIT MATERIAL (Admin Only)
-@routes.route('/edit_material/<int:material_id>', methods=['GET', 'POST'])
+@routes.route('/edit_materials/<int:material_id>', methods=['GET', 'POST'])
 @login_required
 def edit_material(material_id):
     if current_user.role != 'admin':
@@ -193,7 +193,7 @@ def edit_material(material_id):
         flash("Material updated successfully!", "success")
         return redirect(url_for('routes.view_materials'))
 
-    return render_template('edit_material.html', material=material)
+    return render_template('edit_materials.html', material=material)
 
 # DELETE MATERIAL (Admin Only)
 @routes.route('/delete_material/<int:material_id>', methods=['POST'])
