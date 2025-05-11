@@ -13,5 +13,7 @@ A Flask-based web application that helps users (core users) get material recomme
 
 ## 🚀 How to Run Locally
 
-1. **Clone the repository:**
+1.Clone the repository:
    https://github.com/renukamandapati/Renuka_construction_material_recommendation_project
+2.Live Demo:
+   https://renuka-construction-material.onrender.com
